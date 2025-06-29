@@ -1,12 +1,69 @@
-# React + Vite
+# Frontend do Sistema de Gerenciamento Financeiro (Matrix Theme)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o componente de frontend da aplicação de gerenciamento financeiro, desenvolvida com React e Vite, com estilização inspirada no tema Matrix utilizando Styled Components. Ele interage com o backend para exibir e gerenciar dados financeiros e informações de gamificação.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+* **React**: Biblioteca JavaScript para construir interfaces de usuário.
+* **Vite**: Ferramenta de build rápida para desenvolvimento frontend.
+* **Styled Components**: Biblioteca para estilização de componentes React utilizando CSS-in-JS, com tema de cores Matrix.
+* **Axios**: Cliente HTTP baseado em Promises para fazer requisições ao backend.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Como Executar o Projeto
+
+Siga os passos abaixo para configurar e iniciar a aplicação frontend:
+
+1.  **Navegue até a pasta do frontend:**
+    ```bash
+    cd matrix-finance/frontend
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+    (Este comando instalará `react`, `styled-components`, `axios` e outras dependências do projeto.)
+
+3.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+
+A aplicação será iniciada e geralmente estará disponível em `http://localhost:5173` (ou outra porta indicada pelo Vite). Certifique-se de que o **backend** esteja rodando (`nodemon server.js` na pasta `backend`) para que a aplicação funcione corretamente.
+
+---
+
+## 📂 Estrutura do Projeto
+
+frontend/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── styles/
+│   │   └── GlobalStyles.js  # Estilos globais e cores do tema Matrix
+│   ├── App.jsx              # Componente principal da aplicação
+│   ├── main.jsx             # Ponto de entrada do React
+│   └── index.css (pode estar vazio ou excluído, pois usamos styled-components)
+├── index.html
+├── package.json
+├── package-lock.json
+└── vite.config.js
+
+---
+
+## ✨ Funcionalidades
+
+* **Dashboard Temático**: Interface inspirada no tema Matrix (cores verdes e pretas).
+* **Adicionar Transações**: Formulário para registrar despesas e receitas com descrição, valor, tipo e categoria.
+* **Extrato de Transações**: Lista de todas as transações, com destaque para receitas (verde) e despesas (vermelho).
+* **Filtro de Transações**: Opções para filtrar transações por tipo (todas, receitas, despesas).
+* **Ordenação de Transações**: Opções para ordenar transações por valor ou descrição (crescente/decrescente).
+* **Resumo Financeiro**: Exibição do total de despesas e do saldo financeiro atual.
+* **Gamificação (Nível & XP)**: Visualização do nível e experiência (XP) do usuário, que se atualizam com base no progresso financeiro (ex: ao adicionar receitas que contribuem para um saldo positivo).
+
+---
